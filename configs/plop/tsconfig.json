@@ -1,0 +1,9 @@
+{
+    "extends": "@skipa/ts-config/base",
+    "include": ["."],
+    "compilerOptions": {
+        "allowJs": true,
+        "noEmit": true
+    },
+    "exclude": ["node_modules", "dist"]
+}

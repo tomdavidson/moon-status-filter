@@ -1,0 +1,29 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "cSpell.words": ["imprt", "nextjs", "skipa", "sonarjs"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.workingDirectories": [
+        { "pattern": "./apps/*/" },
+        { "pattern": "./packages/*/" },
+        { "pattern": "./configs/*/" }
+    ],
+    "editor.formatOnSave": true,
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "yaml", "json", "markdown"],
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow": ".github/workflows/*.yml*"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.associations": {
+        "tsconfig*.json": "jsonc",
+        ".*ignore": "ignore",
+        "CODEOWNERS": "ignore"
+    }
+}

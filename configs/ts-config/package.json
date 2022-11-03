@@ -1,0 +1,20 @@
+{
+    "name": "@skipa/ts-config",
+    "version": "0.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "files": [
+        "base.json",
+        "browser.json",
+        "nextjs.json",
+        "react-library.json"
+    ],
+    "scripts": {
+        "lint": "eslint "
+    },
+    "peerDependencies": {
+        "@tsconfig/node18-strictest": "^1.0.0",
+        "@tsconfig/node18-strictest-esm": "^1.0.1"
+    }
+}

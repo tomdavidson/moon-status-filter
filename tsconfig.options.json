@@ -1,0 +1,10 @@
+{
+    "display": "Type Check",
+    "extends": "@skipa/ts-config/base.json",
+    "compilerOptions": {
+        // needed for zx scripts until ts support is more seamless.
+        "module": "ESNext",
+        "noEmit": true,
+        "emitDeclarationsOnly": true
+    }
+}

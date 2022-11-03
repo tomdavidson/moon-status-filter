@@ -1,0 +1,13 @@
+{
+    // List of extensions which should be recommended for users of this workspace.
+    "recommendations": [
+        "cschleiden.vscode-github-actions",
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "folke.vscode-monorepo-workspace",
+        "moonrepo.moon-console",
+        "redhat.vscode-yaml"
+        // "timonwong.shellcheck",
+    ]
+}

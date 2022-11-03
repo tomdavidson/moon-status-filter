@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Node 18 Strict with swc/ts-node",
+    "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
+    "exclude": ["node_modules", "dist", "public", "coverage"],
+    "compilerOptions": {
+        "strictNullChecks": true
+    },
+    "ts-node": {
+        "files": true,
+        "swc": true,
+        "transpileOnly": true
+    }
+}

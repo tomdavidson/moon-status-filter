@@ -1,0 +1,19 @@
+{
+    "name": "@skipa/prettier-config",
+    "version": "0.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "files": [
+        "prettier-config.json"
+    ],
+    "scripts": {
+        "lint": "eslint ."
+    },
+    "peerDependencies": {
+        "prettier": "^2.7.1",
+        "prettier-plugin-package-perfection": "^1.0.6",
+        "prettier-plugin-sh": "^0.12.4"
+    },
+    "exports": "./prettier-config.json"
+}

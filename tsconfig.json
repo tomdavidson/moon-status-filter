@@ -1,0 +1,12 @@
+{
+  "display": "Repo Root",
+  "extends": "@skipa/ts-config/base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

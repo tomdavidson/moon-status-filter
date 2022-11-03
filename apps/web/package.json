@@ -1,0 +1,24 @@
+{
+    "private": true,
+    "name": "web",
+    "version": "0.0.0",
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "lint": "eslint .",
+        "start": "next start"
+    },
+    "dependencies": {
+        "@ram/ui": "workspace:0.0.0",
+        "next": "12.2.5",
+        "next-transpile-modules": "9.1.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "@skipa/prettier-config": "workspace:0.0.0",
+        "@skipa/ts-config": "workspace:0.0.0",
+        "eslint-config-skipa": "workspace:^0.0.0"
+    },
+    "prettier": "@skipa/prettier-config"
+}

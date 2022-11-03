@@ -1,0 +1,4 @@
+{
+    "extends": "@skipa/ts-config/nextjs.json",
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}

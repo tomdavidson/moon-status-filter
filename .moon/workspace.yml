@@ -1,0 +1,65 @@
+$schema: 'https://moonrepo.dev/schemas/workspace.json'
+
+# Extend and inherit an external configuration file. Must be a valid HTTPS URL or file system path.
+# extends: './shared/workspace.yml'
+
+projects:
+  globs:
+    - 'apps/*'
+    - 'configs/*'
+    - 'packages/*'
+  sources:
+    root: '.'
+
+node:
+  # Must be a semantic version that includes minor and patch.
+  version: '18.12.0'
+  binExecArgs:
+    - '--loader'
+    - '@boost/module/loader'
+
+  packageManager: 'pnpm'
+  pnpm:
+    version: '7.14.0'
+
+  addEnginesConstraint: true
+
+  aliasPackageNames: name-and-scope
+
+  # Not sure how this will interact with pnpm so turning it off initially
+  dedupeOnLockfileChange: false
+
+  # Sync a project's `dependsOn` as dependencies within the project's `package.json`.
+  syncProjectWorkspaceDependencies: true
+
+typescript:
+  # When `syncProjectReferences` is enabled and a dependent project reference
+  # *does not* have a `tsconfig.json`, automatically create one.
+
+  # disable for initial moon adoption
+  createMissingConfig: false
+
+  # Name of `tsconfig.json` file in the project root.
+  projectConfigFileName: 'tsconfig.json'
+
+  # Name of `tsconfig.json` file in the workspace root.
+  rootConfigFileName: 'tsconfig.json'
+
+  # Name of the config file in the workspace root that defines shared compiler options
+  # for all project reference based config files.
+  rootOptionsConfigFileName: 'tsconfig.options.json'
+
+  # Sync a project's `dependsOn` as TypeScript project references within the
+  # project's `tsconfig.json` and the workspace root `tsconfig.json`.
+
+  # disable for initial adoption
+  syncProjectReferences: false
+
+  # sync a project's tsconfig.json project references to the paths compiler option,
+  # using the referenced project's package.json name. This is useful for mapping import
+  # aliases to their source code. Defaults to false.
+  # syncProjectReferencesToPaths: true
+
+vcs:
+  manager: 'git'
+  defaultBranch: 'main'

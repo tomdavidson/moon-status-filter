@@ -1,0 +1,46 @@
+tasks:
+  # prepush:
+  #   command: moon run :format
+  #   inputs: []
+  #   options:
+  #     runFromWorkspaceRoot: true
+  #   deps:
+
+  ls:
+    command: ls
+    platform: system
+
+  relink:
+    command: |
+      bash -c "
+      find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
+      pnpm install --recursive 
+      "
+    platform:
+      system
+      # pnpm i -r
+
+  prettier:
+    command: 'prettier --write --cache  --ignore-path @in(0) --ignore-unknown .'
+    inputs:
+      - '/.prettierignore'
+      - '/package.json'
+      - '/.editorconfig'
+      - '@globs(sources)'
+      - '@globs(tests)'
+    options:
+      runFromWorkspaceRoot: true
+      runInCI: false
+      outputStyle: stream
+
+  prettier-check:
+    command: 'prettier --check --cache --ignore-path @in(0) --ignore-unknown .'
+    inputs:
+      - '/.prettierignore'
+      - '/package.json'
+      - '/.editorconfig'
+      - '@globs(sources)'
+      - '@globs(tests)'
+    options:
+      runInCi: true
+      outputStyle: buffer-only-failure

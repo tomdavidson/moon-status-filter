@@ -1,0 +1,49 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# external moduels & dependancies
+node_modules
+.pnp
+.pnp.js
+__package_previews__
+.store
+
+# testing
+coverage
+
+# next.js
+.next/
+out/
+build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnpm-debug.log
+build-storybook.log
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# turbo
+.turbo
+
+# caches
+.jest-cache
+.eslintcache
+.parcel-cache
+
+# use pnpm so ignore other lock files
+yarn.lock
+package-lock.json
+
+# Moon
+.moon/cache
+.moon/docker

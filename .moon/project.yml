@@ -1,0 +1,84 @@
+$schema: 'https://moonrepo.dev/schemas/global-project.json'
+
+# Extend and inherit an external configuration file. Must be a valid HTTPS URL or file system path.
+# extends: './shared/project.yml'
+
+fileGroups:
+  configs:
+    - '*.{js,json}'
+
+  sources:
+    - 'src/**/*'
+    - 'types/**/*'
+
+  tests:
+    - 'tests/**/*.test.*'
+    - '**/__tests__/**/*'
+    - '**/*.spec.*'
+
+  assets:
+    - 'assets/**/*'
+    - 'images/**/*'
+    - 'static/**/*'
+    - '**/*.{scss,css}'
+    - '**/*.mdx'
+
+tasks:
+  format:
+    command: 'noop'
+    deps:
+      - '~:prettier'
+      - '~:eslint-fix'
+    options:
+      local: true
+      runInCi: false
+      outputStyle: stream
+
+  lint:
+    command: 'noop'
+    deps:
+      - '~:prettier-check'
+      - '~:eslint'
+      # - '^:typecheck'
+    options:
+      runInCi: true
+      runDepsInParallel: true
+      outputStyle: buffer-only-failure
+
+  eslint-fix:
+    command: 'eslint'
+    args:
+      - '--fix'
+      - '--cache'
+      - '--color'
+      - '--no-error-on-unmatched-pattern'
+      - '.'
+    options:
+      runInCI: false
+      outputStyle: stream
+
+  eslint:
+    command: 'eslint'
+    args:
+      - '--cache'
+      - '--color'
+      - '--config'
+      - '../../eslint.config.js'
+      # - '--ignore-path'
+      # - '@in(0)'
+      # - '--exit-on-fatal-error'
+      - '--no-error-on-unmatched-pattern'
+      - '.'
+    inputs:
+      - '/.eslintignore'
+      - '.eslintrc.js'
+      - '@globs(sources)'
+      - '@globs(tests)'
+      - '*.json'
+      - 'tsconfig.json'
+      - '/.eslintrc.js'
+      - '/tsconfig.eslint.json'
+      - '/tsconfig.options.json'
+    options:
+      runInCi: true
+      outputStyle: buffer-only-failure

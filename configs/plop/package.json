@@ -1,0 +1,25 @@
+{
+    "name": "@skipa/plop-generators",
+    "version": "0.0.0",
+    "description": "Reuseable plop templates to be across projects",
+    "license": "UNLICENSED",
+    "type": "module",
+    "main": "./src/index.js",
+    "scripts": {
+        "build": "exit 0; parcel build && cp -Tr src/templates/ dist/templates/",
+        "lint": "eslint .",
+        "test:e2e": "echo dummy to test turbo filters"
+    },
+    "types": "./src/index.js",
+    "dependencies": {
+        "inquirer": "^9.1.4",
+        "inquirer-file-tree-selection-prompt": "^2.0.5",
+        "plop": "^3.1.1"
+    },
+    "devDependencies": {
+        "@skipa/ts-config": "workspace:0.0.0",
+        "@types/inquirer": "^9.0.2",
+        "parcel": "^2.7.0"
+    },
+    "prettier": "@skipa/prettier-config"
+}

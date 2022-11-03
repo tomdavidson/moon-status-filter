@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json.schemastore.org/prettierrc.json",
+    "printWidth": 120,
+    "singleQuote": true,
+    "plugins": ["prettier-plugin-package-perfection", "prettier-plugin-sh"],
+    "overrides": [
+        {
+            "files": "*.hbs",
+            "options": {
+                "singleQuote": false
+            }
+        },
+        {
+            "files": "*.json",
+            "options": {
+                "singleQuote": false,
+                "trailingComma": "es5"
+            }
+        },
+        {
+            "files": ["*.yaml", "*.yml"],
+            "options": {
+                "trailingComma": "es5"
+            }
+        }
+    ]
+}

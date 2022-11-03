@@ -1,0 +1,10 @@
+{
+    "extends": "@skipa/ts-config/react-library",
+    "compilerOptions": {
+        "allowJs": true,
+        "noEmit": true,
+        "baseUrl": "./src/"
+    },
+    "include": ["."],
+    "exclude": ["dist", "build", "node_modules", ".storybook"]
+}

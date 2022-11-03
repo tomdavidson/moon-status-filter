@@ -1,0 +1,44 @@
+# Define text file attributes.
+# - Treat them as text.
+# - Ensure no CRLF line-endings, neither on checkout nor on checkin.
+# - Detect whitespace errors.
+#   - Exposed by default in `git diff --color` on the CLI.
+#   - Validate with `git diff --check`.
+#   - Deny applying with `git apply --whitespace=error-all`.
+#   - Fix automatically with `git apply --whitespace=fix`.
+
+* text=auto eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+
+*.ejs.t -linguist-detectable
+
+# images
+# *.gif                   binary filter=lfs merge=lfs diff=lfs
+# *.ico                   binary filter=lfs merge=lfs diff=lfs
+# *.jpeg                  binary filter=lfs merge=lfs diff=lfs
+# *.jpg                   binary filter=lfs merge=lfs diff=lfs
+# *.png                   binary filter=lfs merge=lfs diff=lfs
+# *.svgz                  binary filter=lfs merge=lfs diff=lfs
+# *.webp                  binary filter=lfs merge=lfs diff=lfs
+# *.psd                   binary filter=lfs merge=lfs diff=lfs
+
+# generated text
+package-lock.json -diff linguist-generated=true
+yarn.lock -diff linguist-generated=true
+pnpm-lock.yaml -diff linguist-generated=true
+dist/** -diff linguist-generated=true
+*.tfstate -diff linguist-generated=true
+
+# fonts
+*.otf binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+
+# design files
+# *.fig       lockable    -text  linguist-generated=true filter=lfs merge=lfs diff=lfs
+# *.pdf       lockable    -text  linguist-generated=true filter=lfs merge=lfs diff=lfs
+
+# archives
+# *.tar.gz    lockable    binary linguist-generated=true filter=lfs merge=lfs
+# *.gz        lockable    binary linguist-generated=true filter=lfs merge=lfs
+# *.zip       lockable    binary linguist-generated=true filter=lfs merge=lfs
